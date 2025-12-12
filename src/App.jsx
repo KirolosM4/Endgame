@@ -45,7 +45,7 @@ const App = () => {
         getWord();
     },[])
     return(
-        <div className="bg-[#262626] text-white md:h-screen h-fit text-center p-7 flex flex-col items-center">
+        <div className=" text-white text-center p-7 flex flex-col items-center">
             <p className="text-2xl py-5">Assembly:Endgame</p>
             <p className="text-gray-500">Guess the word within 8 attempts to keep the programming world safe from Assembly</p>
             {
@@ -70,10 +70,10 @@ const App = () => {
                     ))
                 }
             </div>
-            <div className="grid grid-cols-7 text-black gap-3 text-center">
+            <div className="grid grid-cols-7 w-fit text-black gap-3 text-center">
                 {
                     letter.split(",").map((letter)=>(
-                        <Button className={`py-3 px-4 border-[1px] border-white bg-yellow-700 text-black ${successLetter.includes(letter) && "bg-green-700"} ${errLetter.includes(letter) && "bg-red-700"}` } disabled={successLetter.includes(letter)|| errLetter.includes(letter) || killAttempts.length == 8} onClick={()=>checkLetter(letter)}>{letter}</Button>
+                        <Button className={`py-3 px-4 w-fit border-[1px] border-white bg-yellow-700 text-black ${successLetter.includes(letter) && "bg-green-700"} ${errLetter.includes(letter) && "bg-red-700"}` } disabled={successLetter.includes(letter)|| errLetter.includes(letter) || killAttempts.length == 8} onClick={()=>checkLetter(letter)}>{letter}</Button>
                     ))
                 }
             </div>
