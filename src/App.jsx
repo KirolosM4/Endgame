@@ -51,9 +51,9 @@ const App = () => {
             {
                 successLetter.length == word[0]?.split("")?.length
                 ?
-                <p className="w-1/3 m-5 p-5 flex flex-col bg-green-700"> <span>You Win!🎉</span> <span>Well Done🏆</span></p>
+                <p className="md:w-1/3 md:m-5 md:p-5 w-full flex flex-col bg-green-700"> <span>You Win!🎉</span> <span>Well Done🏆</span></p>
                 :
-                <p className={`md:w-1/3 md:m-5 md:p-5 w-full p-2 m-2 ${killAttempts.length == 8 ? "bg-red-700" : "bg-purple-700"} ${errLetter.length > 0 ? "visible" : "invisible"}`}>{wordErr[errLetter.length - 1]}</p>
+                <p className={`md:w-1/3 md:m-5 md:p-5 w-full ${killAttempts.length == 8 ? "bg-red-700" : "bg-purple-700"} ${errLetter.length > 0 ? "visible" : "invisible"}`}>{wordErr[errLetter.length - 1]}</p>
                 
             }
             <div className="flex flex-wrap md:flex-nowrap gap-3 w-full md:w-1/3 justify-center">
@@ -70,7 +70,7 @@ const App = () => {
                     ))
                 }
             </div>
-            <div className="grid grid-cols-7 text-black gap-3">
+            <div className="grid grid-cols-7 text-black gap-3 text-center">
                 {
                     letter.split(",").map((letter)=>(
                         <Button className={`py-3 px-4 border-[1px] border-white bg-yellow-700 text-black ${successLetter.includes(letter) && "bg-green-700"} ${errLetter.includes(letter) && "bg-red-700"}` } disabled={successLetter.includes(letter)|| errLetter.includes(letter) || killAttempts.length == 8} onClick={()=>checkLetter(letter)}>{letter}</Button>
