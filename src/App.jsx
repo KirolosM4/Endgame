@@ -53,7 +53,7 @@ const App = () => {
                 ?
                 <p className="md:w-1/3 md:m-5 md:p-5 w-full flex flex-col bg-green-700"> <span>You Win!🎉</span> <span>Well Done🏆</span></p>
                 :
-                <p className={`md:w-1/3 md:m-5 md:p-5 w-full ${killAttempts.length == 8 ? "bg-red-700" : "bg-purple-700"} ${errLetter.length > 0 ? "visible" : "invisible"}`}>{wordErr[errLetter.length - 1]}</p>
+                <p className={`md:w-1/3 m-5 p-5 w-full ${killAttempts.length == 8 ? "bg-red-700" : "bg-purple-700"} ${errLetter.length > 0 ? "visible" : "invisible"}`}>{wordErr[errLetter.length - 1]}</p>
                 
             }
             <div className="flex flex-wrap md:flex-nowrap gap-3 w-full md:w-1/3 justify-center">
